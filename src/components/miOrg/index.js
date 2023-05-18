@@ -1,5 +1,4 @@
 import "./miOrg.css";
-import { useState } from "react";
 
 const MiOrg = (props) => {
 
