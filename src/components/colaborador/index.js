@@ -3,11 +3,11 @@ import { FaTrashAlt } from "react-icons/fa";
 
 const Colaborador = (props) => {
 
-    const {nombre, puesto, foto} = props.datos
+    const {nombre, puesto, foto, id} = props.datos
     const {colorPrimario, eliminarColaborador} = props
 
     return <div className="colaborador">
-        <FaTrashAlt onClick={eliminarColaborador} className="eliminar" />
+        <FaTrashAlt onClick={() => eliminarColaborador(id)} className="eliminar" />
         <div className="encabezado" style={{ backgroundColor: colorPrimario}}>
             <img src={foto} alt={nombre}/>
         </div>
