@@ -15,7 +15,8 @@ function App() {
     nombre: "Ivan Pisquiy",
     puesto: "Web Developer",
     foto: "https://github.com/IvanPisquiy06.png",
-    equipo: "Front End"
+    equipo: "Front End",
+    fav: true
   }]);
 
   const[equipos, setEquipos] = useState([
@@ -97,6 +98,16 @@ function App() {
     setEquipos([...equipos, nuevoEquipo]);
   }
 
+  const agregarFav = (id) => {
+    const actualizarColabs = colaboradores.map((colaborador) => {
+      if(colaborador.id === id){
+        colaborador.fav = !colaborador.fav
+      }
+      return colaborador
+    })
+    setColaboradores(actualizarColabs)
+  }
+
   return (
     <div>
       <Header />
@@ -117,6 +128,7 @@ function App() {
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
           eliminarColaborador={eliminarColaborador}
           actualizarColor={actualizarColor}
+          agregarFav={agregarFav}
         /> )
       }
 

@@ -1,5 +1,5 @@
 import "./formulario.css"
-import CampoTexto from '../campoTexto';
+import Campo from '../campo';
 import ListaOpciones from "../listaOpciones";
 import Boton from "../boton/boton";
 import { useState } from "react";
@@ -24,7 +24,8 @@ const Formulario = (props) => {
             nombre,
             puesto,
             foto,
-            equipo
+            equipo,
+            fav: false,
         }
         registrarColaborador(datosEnviar)
     }
@@ -42,21 +43,21 @@ const Formulario = (props) => {
     return <section className="formulario">
         <form onSubmit={manejarEnvio}>
             <h2>Rellena el formulario para crear el colaborador.</h2>
-            <CampoTexto 
+            <Campo 
                 titulo="Nombre" 
                 placeholder="Ingresar nombre" 
                 required 
                 valor={nombre} 
                 setValor={setNombre}
             />
-            <CampoTexto 
+            <Campo 
                 titulo="Puesto" 
                 placeholder="Ingresar puesto" 
                 required 
                 valor={puesto} 
                 setValor={setPuesto}
             />
-            <CampoTexto 
+            <Campo 
                 titulo="Foto" 
                 placeholder="Ingresar enlace de foto" 
                 required 
@@ -71,20 +72,21 @@ const Formulario = (props) => {
             <Boton texto="Crear" />
         </form>
         <form onSubmit={manejarEquipo}>
-            <h2>Rellena el formulario para crear el equipo.</h2>
-            <CampoTexto 
+            <h2>Rellena el formulario para crear nuevo equipo.</h2>
+            <Campo 
                 titulo="Titulo" 
                 placeholder="Ingresar titulo" 
                 required 
                 valor={titulo} 
                 setValor={setTitulo}
             />
-            <CampoTexto 
+            <Campo 
                 titulo="Color" 
                 placeholder="Ingresar color Hex" 
                 required 
                 valor={color} 
                 setValor={setColor}
+                type="color"
             />
             <Boton texto="Crear equipo" />
         </form>
