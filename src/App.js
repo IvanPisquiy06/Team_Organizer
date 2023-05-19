@@ -26,6 +26,11 @@ function App() {
     setColaboradores([...colaboradores, colaborador]);
   }
 
+  //Eliminar Colaborador
+  const eliminarColaborador = () => {
+
+  }
+
   //Lista de Equipos
   const equipos = [
     {
@@ -82,6 +87,7 @@ function App() {
           datos={equipo} 
           key={equipo.titulo}
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
+          eliminarColaborador={eliminarColaborador}
         /> )
       }
 

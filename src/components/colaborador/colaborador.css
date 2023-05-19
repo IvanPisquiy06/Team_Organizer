@@ -1,6 +1,7 @@
 .colaborador{
-    width: 250px;
+    width: 240px;
     margin-bottom: 24px;
+    position: relative;
 }
 
 .colaborador .encabezado{
@@ -17,8 +18,8 @@
 .colaborador .info{
     background: #FFFFFF;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
-    padding-top: 50px;
-    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 30px;
     min-height: 100px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -38,4 +39,10 @@
     padding: 0 24px;
     font-weight: 400;
     margin: 0;
+}
+
+.eliminar{
+    position: absolute;
+    right: -15px;
+    top: -15px;
 }
